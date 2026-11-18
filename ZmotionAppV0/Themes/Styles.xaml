@@ -1,0 +1,116 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <!--  Nạp màu ngay trong file này để StaticResource bên dưới luôn tìm thấy  -->
+        <ResourceDictionary Source="/ZmotionAppV0;component/Themes/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--  ===== Khuôn nút phẳng: có hiệu ứng hover/nhấn cả khi nền Transparent =====  -->
+    <ControlTemplate x:Key="FlatButtonTemplate" TargetType="Button">
+        <Grid>
+            <Border
+                x:Name="bg"
+                Background="{TemplateBinding Background}"
+                CornerRadius="4" />
+            <Border
+                x:Name="hover"
+                Background="White"
+                CornerRadius="4"
+                Opacity="0" />
+            <ContentPresenter
+                Margin="{TemplateBinding Padding}"
+                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="hover" Property="Opacity" Value="0.12" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="hover" Property="Opacity" Value="0.22" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.5" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <!--  ===== Nút trên header / thanh điều hướng (đã có trong file của bạn) =====  -->
+    <Style x:Key="HeaderButtonStyle" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource FlatButtonTemplate}" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="12,0" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+    </Style>
+
+    <Style x:Key="NavigationButtonStyle" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource FlatButtonTemplate}" />
+        <Setter Property="Height" Value="42" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Padding" Value="20,0" />
+        <Setter Property="Margin" Value="8,3" />
+        <Setter Property="Foreground" Value="{StaticResource NavTextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+    </Style>
+
+    <!--  ===== Nút hành động (Process / Stop): giống nhau, chỉ khác màu nền =====  -->
+    <Style x:Key="ActionButtonStyle" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource FlatButtonTemplate}" />
+        <Setter Property="Height" Value="38" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Cursor" Value="Hand" />
+    </Style>
+    <Style
+        x:Key="PrimaryActionButtonStyle"
+        BasedOn="{StaticResource ActionButtonStyle}"
+        TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource AccentBrush}" />
+    </Style>
+    <Style
+        x:Key="DangerActionButtonStyle"
+        BasedOn="{StaticResource ActionButtonStyle}"
+        TargetType="Button">
+        <Setter Property="Background" Value="{StaticResource DangerBrush}" />
+    </Style>
+
+    <!--  ===== Khung bảng trắng (dùng 2 lần: vùng trang và bảng Operation) =====  -->
+    <Style x:Key="PanelStyle" TargetType="Border">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="BorderBrush" Value="{StaticResource PanelBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="4" />
+    </Style>
+
+    <!--  ===== Chữ =====  -->
+    <Style x:Key="PanelTitleStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
+        <Setter Property="Margin" Value="16,14,16,10" />
+    </Style>
+
+    <!--  Hàng "nhãn - giá trị" trong bảng thông tin (6 chỗ dùng cùng khoảng cách 0,6)  -->
+    <Style x:Key="InfoLabelStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource TextSecondaryBrush}" />
+        <Setter Property="Margin" Value="0,6" />
+    </Style>
+    <Style x:Key="InfoValueStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource TextPrimaryBrush}" />
+        <Setter Property="Margin" Value="0,6" />
+    </Style>
+
+    <!--  Chữ nhỏ trên thanh trạng thái (2 chỗ dùng)  -->
+    <Style x:Key="StatusTextStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{StaticResource OnDarkBrush}" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+</ResourceDictionary>

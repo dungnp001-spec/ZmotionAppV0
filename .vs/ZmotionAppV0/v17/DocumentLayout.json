@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\VIASPC-00\\Desktop\\Zmotion\\Project\\APP\\ZmotionAppV0\\ZmotionAppV0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2A82487E-5BD2-4FAE-8303-602A49F1A2BC}|ZmotionAppV0\\ZmotionAppV0.csproj|c:\\users\\viaspc-00\\desktop\\zmotion\\project\\app\\zmotionappv0\\zmotionappv0\\zmotionappv0\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{2A82487E-5BD2-4FAE-8303-602A49F1A2BC}|ZmotionAppV0\\ZmotionAppV0.csproj|C:\\Users\\VIASPC-00\\Desktop\\Zmotion\\Project\\APP\\ZmotionAppV0\\ZmotionAppV0\\zmotionappv0\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{2A82487E-5BD2-4FAE-8303-602A49F1A2BC}|ZmotionAppV0\\ZmotionAppV0.csproj|solutionrelative:zmotionappv0\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A82487E-5BD2-4FAE-8303-602A49F1A2BC}|ZmotionAppV0\\ZmotionAppV0.csproj|C:\\Users\\VIASPC-00\\Desktop\\Zmotion\\Project\\APP\\ZmotionAppV0\\ZmotionAppV0\\zmotionappv0\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A82487E-5BD2-4FAE-8303-602A49F1A2BC}|ZmotionAppV0\\ZmotionAppV0.csproj|solutionrelative:zmotionappv0\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A82487E-5BD2-4FAE-8303-602A49F1A2BC}|ZmotionAppV0\\ZmotionAppV0.csproj|c:\\users\\viaspc-00\\desktop\\zmotion\\project\\app\\zmotionappv0\\zmotionappv0\\zmotionappv0\\themes\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2A82487E-5BD2-4FAE-8303-602A49F1A2BC}|ZmotionAppV0\\ZmotionAppV0.csproj|solutionrelative:zmotionappv0\\themes\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A82487E-5BD2-4FAE-8303-602A49F1A2BC}|ZmotionAppV0\\ZmotionAppV0.csproj|c:\\users\\viaspc-00\\desktop\\zmotion\\project\\app\\zmotionappv0\\zmotionappv0\\zmotionappv0\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2A82487E-5BD2-4FAE-8303-602A49F1A2BC}|ZmotionAppV0\\ZmotionAppV0.csproj|solutionrelative:zmotionappv0\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A82487E-5BD2-4FAE-8303-602A49F1A2BC}|ZmotionAppV0\\ZmotionAppV0.csproj|c:\\users\\viaspc-00\\desktop\\zmotion\\project\\app\\zmotionappv0\\zmotionappv0\\zmotionappv0\\themes\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{2A82487E-5BD2-4FAE-8303-602A49F1A2BC}|ZmotionAppV0\\ZmotionAppV0.csproj|solutionrelative:zmotionappv0\\themes\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +26,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Colors.xaml",
+              "DocumentMoniker": "C:\\Users\\VIASPC-00\\Desktop\\Zmotion\\Project\\APP\\ZmotionAppV0\\ZmotionAppV0\\ZmotionAppV0\\Themes\\Colors.xaml",
+              "RelativeDocumentMoniker": "ZmotionAppV0\\Themes\\Colors.xaml",
+              "ToolTip": "C:\\Users\\VIASPC-00\\Desktop\\Zmotion\\Project\\APP\\ZmotionAppV0\\ZmotionAppV0\\ZmotionAppV0\\Themes\\Colors.xaml",
+              "RelativeToolTip": "ZmotionAppV0\\Themes\\Colors.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-18T10:26:01.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Styles.xaml",
+              "DocumentMoniker": "C:\\Users\\VIASPC-00\\Desktop\\Zmotion\\Project\\APP\\ZmotionAppV0\\ZmotionAppV0\\ZmotionAppV0\\Themes\\Styles.xaml",
+              "RelativeDocumentMoniker": "ZmotionAppV0\\Themes\\Styles.xaml",
+              "ToolTip": "C:\\Users\\VIASPC-00\\Desktop\\Zmotion\\Project\\APP\\ZmotionAppV0\\ZmotionAppV0\\ZmotionAppV0\\Themes\\Styles.xaml",
+              "RelativeToolTip": "ZmotionAppV0\\Themes\\Styles.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-18T10:05:27.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\VIASPC-00\\Desktop\\Zmotion\\Project\\APP\\ZmotionAppV0\\ZmotionAppV0\\ZmotionAppV0\\App.xaml",
+              "RelativeDocumentMoniker": "ZmotionAppV0\\App.xaml",
+              "ToolTip": "C:\\Users\\VIASPC-00\\Desktop\\Zmotion\\Project\\APP\\ZmotionAppV0\\ZmotionAppV0\\ZmotionAppV0\\App.xaml",
+              "RelativeToolTip": "ZmotionAppV0\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-11-18T09:13:25.655Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -29,20 +73,7 @@
               "ToolTip": "C:\\Users\\VIASPC-00\\Desktop\\Zmotion\\Project\\APP\\ZmotionAppV0\\ZmotionAppV0\\ZmotionAppV0\\MainWindow.xaml",
               "RelativeToolTip": "ZmotionAppV0\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-10-30T02:18:51.958Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\VIASPC-00\\Desktop\\Zmotion\\Project\\APP\\ZmotionAppV0\\ZmotionAppV0\\ZmotionAppV0\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "ZmotionAppV0\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\VIASPC-00\\Desktop\\Zmotion\\Project\\APP\\ZmotionAppV0\\ZmotionAppV0\\ZmotionAppV0\\MainWindow.xaml.cs",
-              "RelativeToolTip": "ZmotionAppV0\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-30T02:18:44.045Z",
+              "WhenOpened": "2026-11-18T04:35:57.67Z",
               "EditorCaption": ""
             }
           ]

@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:ZmotionAppV0"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- File chứa màu sắc -->
+                <ResourceDictionary Source="Themes/Colors.xaml" />
+                <!-- File chứa Style và ControlTemplate -->
+                <ResourceDictionary Source="Themes/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
