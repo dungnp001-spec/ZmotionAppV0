@@ -3,9 +3,13 @@
     <!--  Nền  -->
     <SolidColorBrush x:Key="AppBgBrush" Color="#F4F6F8" />
     <SolidColorBrush x:Key="HeaderBrush" Color="#0B2147" />
+    <SolidColorBrush x:Key="HeaderChipBrush" Color="#1FFFFFFF" />
     <SolidColorBrush x:Key="NavBgBrush" Color="#102A52" />
+    <SolidColorBrush x:Key="NavHoverBrush" Color="#1A3A6B" />
+    <SolidColorBrush x:Key="NavActiveBrush" Color="#1F4B8F" />
     <SolidColorBrush x:Key="StatusBarBrush" Color="#263238" />
     <SolidColorBrush x:Key="PanelBorderBrush" Color="#E0E5EA" />
+    <SolidColorBrush x:Key="DividerBrush" Color="#E3E8ED" />
 
     <!--  Màu nhấn / trạng thái  -->
     <SolidColorBrush x:Key="AccentBrush" Color="#1976D2" />
@@ -13,8 +17,12 @@
     <SolidColorBrush x:Key="DangerSoftBrush" Color="#EF5350" />
     <SolidColorBrush x:Key="SuccessBrush" Color="#66BB6A" />
     <SolidColorBrush x:Key="SuccessStrongBrush" Color="#43A047" />
-    <SolidColorBrush x:Key="False" Color="Gray" />
-    <SolidColorBrush x:Key="True" Color="#43A047" />
+    <SolidColorBrush x:Key="WarningBrush" Color="#E58A1F" />
+
+    <!--  Đèn LED trạng thái (thay cho key "True"/"False" cũ)  -->
+    <SolidColorBrush x:Key="LedOffBrush" Color="#B0BEC5" />
+    <SolidColorBrush x:Key="LedOnBrush" Color="#43A047" />
+    <SolidColorBrush x:Key="LedErrorBrush" Color="#E53935" />
 
     <!--  Chữ trên nền sáng  -->
     <SolidColorBrush x:Key="TextPrimaryBrush" Color="#263238" />
@@ -27,4 +35,13 @@
     <SolidColorBrush x:Key="OnDarkMutedBrush" Color="#B8C7DC" />
     <SolidColorBrush x:Key="NavTitleBrush" Color="#8FA7C7" />
     <SolidColorBrush x:Key="NavTextBrush" Color="#D7E2F2" />
+
+    <!--  Ô nhập liệu  -->
+    <SolidColorBrush x:Key="InputBorderBrush" Color="#C5CED6" />
+    <SolidColorBrush x:Key="InputReadOnlyBrush" Color="#F1F4F7" />
+
+    <!--  Nút  -->
+    <SolidColorBrush x:Key="CardBorder" Color="#D5DAE0" />
+    <SolidColorBrush x:Key="BtnNormal" Color="#3E5C76" />
+    <SolidColorBrush x:Key="BtnHover" Color="#4F7396" />
 </ResourceDictionary>

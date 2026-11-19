@@ -11,6 +11,8 @@
     MinWidth="900"
     MinHeight="500"
     Background="{StaticResource AppBgBrush}"
+    SnapsToDevicePixels="True"
+    UseLayoutRounding="True"
     mc:Ignorable="d">
 
     <Grid>
@@ -57,24 +59,36 @@
                         Text="VALEN" />
                 </StackPanel>
 
-                <!--  Alarm  -->
-                <StackPanel
+                <!--  Alarm: dạng "viên thuốc" để nổi bật trên nền header  -->
+                <Border
                     Grid.Column="1"
+                    Padding="14,6"
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Center"
-                    Orientation="Horizontal">
-                    <TextBlock
-                        VerticalAlignment="Center"
-                        FontSize="13"
-                        Foreground="{StaticResource OnDarkMutedBrush}"
-                        Text="CẢNH BÁO:" />
-                    <!--  TODO cách 2: khi nối dữ liệu, chuyển Foreground + Text thành style cục bộ có DataTrigger  -->
-                    <TextBlock
-                        Margin="8,0,0,0"
-                        VerticalAlignment="Center"
-                        FontWeight="SemiBold"
-                        Foreground="{StaticResource SuccessBrush}"
-                        Text="Không có lỗi" />
-                </StackPanel>
+                    Background="{StaticResource HeaderChipBrush}"
+                    CornerRadius="16">
+                    <StackPanel Orientation="Horizontal">
+                        <Ellipse
+                            Width="8"
+                            Height="8"
+                            Margin="0,0,8,0"
+                            VerticalAlignment="Center"
+                            Fill="{StaticResource SuccessBrush}" />
+                        <TextBlock
+                            VerticalAlignment="Center"
+                            FontSize="13"
+                            Foreground="{StaticResource OnDarkMutedBrush}"
+                            Text="CẢNH BÁO:" />
+                        <!--  TODO cách 2: khi nối dữ liệu, chuyển Foreground + Text thành style cục bộ có DataTrigger  -->
+                        <TextBlock
+                            Margin="8,0,0,0"
+                            VerticalAlignment="Center"
+                            FontSize="13"
+                            FontWeight="SemiBold"
+                            Foreground="{StaticResource SuccessBrush}"
+                            Text="Không có lỗi" />
+                    </StackPanel>
+                </Border>
 
                 <!--  Header actions  -->
                 <StackPanel
@@ -97,9 +111,9 @@
         <!--  ===== Main content =====  -->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="170" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="260" />
             </Grid.ColumnDefinitions>
 
             <!--  Navigation  -->
@@ -113,11 +127,27 @@
                         Foreground="{StaticResource NavTitleBrush}"
                         Text="ĐIỀU HƯỚNG" />
                     <StackPanel>
-                        <Button Content="Trang chủ" Style="{StaticResource NavigationButtonStyle}" />
-                        <Button Content="Điều khiển" Style="{StaticResource NavigationButtonStyle}" />
-                        <Button Content="Giám sát" Style="{StaticResource NavigationButtonStyle}" />
-                        <Button Content="Cấu hình" Style="{StaticResource NavigationButtonStyle}" />
-                        <Button Content="Lịch sử" Style="{StaticResource NavigationButtonStyle}" />
+                        <RadioButton
+                            Content="Trang chủ"
+                            GroupName="Nav"
+                            Style="{StaticResource NavigationRadioStyle}" />
+                        <RadioButton
+                            Content="Điều khiển"
+                            GroupName="Nav"
+                            IsChecked="True"
+                            Style="{StaticResource NavigationRadioStyle}" />
+                        <RadioButton
+                            Content="Giám sát"
+                            GroupName="Nav"
+                            Style="{StaticResource NavigationRadioStyle}" />
+                        <RadioButton
+                            Content="Cấu hình"
+                            GroupName="Nav"
+                            Style="{StaticResource NavigationRadioStyle}" />
+                        <RadioButton
+                            Content="Lịch sử"
+                            GroupName="Nav"
+                            Style="{StaticResource NavigationRadioStyle}" />
                     </StackPanel>
                 </DockPanel>
             </Border>
@@ -126,47 +156,175 @@
             <Border
                 Grid.Column="1"
                 Margin="12"
+                Padding="24,20"
                 Style="{StaticResource PanelStyle}">
                 <ContentControl
                     x:Name="CurrentPage"
                     HorizontalContentAlignment="Stretch"
                     VerticalContentAlignment="Stretch">
-                    <Grid>
-                        <TextBlock
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            FontSize="22"
-                            Foreground="{StaticResource TextPlaceholderBrush}"
-                            Text="Trang hiện tại" />
-                    </Grid>
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel MaxWidth="640" HorizontalAlignment="Left">
+
+                            <TextBlock Style="{StaticResource PageTitleStyle}" Text="Điều khiển trục" />
+
+                            <!--  Khu thông số: nhãn | ô giá trị | đơn vị  -->
+                            <TextBlock Style="{StaticResource SectionTitleStyle}" Text="THÔNG SỐ" />
+                            <Grid Margin="0,0,0,24">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="64" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Style="{StaticResource ParamLabelStyle}"
+                                    Text="Vị trí hiện tại" />
+                                <TextBox
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    IsReadOnly="True"
+                                    Style="{StaticResource ValueBoxStyle}"
+                                    Text="0.000" />
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Style="{StaticResource ParamUnitStyle}"
+                                    Text="mm" />
+
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Style="{StaticResource ParamLabelStyle}"
+                                    Text="Vị trí đặt" />
+                                <TextBox
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Style="{StaticResource ValueBoxStyle}"
+                                    Text="0.000" />
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Grid.Column="2"
+                                    Style="{StaticResource ParamUnitStyle}"
+                                    Text="mm" />
+
+                                <TextBlock
+                                    Grid.Row="2"
+                                    Style="{StaticResource ParamLabelStyle}"
+                                    Text="Tốc độ" />
+                                <TextBox
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Style="{StaticResource ValueBoxStyle}"
+                                    Text="100" />
+                                <TextBlock
+                                    Grid.Row="2"
+                                    Grid.Column="2"
+                                    Style="{StaticResource ParamUnitStyle}"
+                                    Text="mm/s" />
+
+                                <TextBlock
+                                    Grid.Row="3"
+                                    Style="{StaticResource ParamLabelStyle}"
+                                    Text="Tăng tốc" />
+                                <TextBox
+                                    Grid.Row="3"
+                                    Grid.Column="1"
+                                    Style="{StaticResource ValueBoxStyle}"
+                                    Text="500" />
+                                <TextBlock
+                                    Grid.Row="3"
+                                    Grid.Column="2"
+                                    Style="{StaticResource ParamUnitStyle}"
+                                    Text="mm/s²" />
+
+                                <TextBlock
+                                    Grid.Row="4"
+                                    Style="{StaticResource ParamLabelStyle}"
+                                    Text="Giảm tốc" />
+                                <TextBox
+                                    Grid.Row="4"
+                                    Grid.Column="1"
+                                    Style="{StaticResource ValueBoxStyle}"
+                                    Text="500" />
+                                <TextBlock
+                                    Grid.Row="4"
+                                    Grid.Column="2"
+                                    Style="{StaticResource ParamUnitStyle}"
+                                    Text="mm/s²" />
+                            </Grid>
+
+                            <!--  Khu nút điều khiển: màu theo ý nghĩa  -->
+                            <TextBlock Style="{StaticResource SectionTitleStyle}" Text="ĐIỀU KHIỂN" />
+                            <UniformGrid Margin="-6,0" Columns="3">
+                                <Button Content="Enable Servo" Style="{StaticResource HmiSuccessButtonStyle}" />
+                                <Button Content="Jog +" Style="{StaticResource HmiPrimaryButtonStyle}" />
+                                <Button Content="Jog -" Style="{StaticResource HmiPrimaryButtonStyle}" />
+                                <Button Content="Home" Style="{StaticResource HmiWarningButtonStyle}" />
+                                <Button Content="Move absolute" Style="{StaticResource HmiButtonStyle}" />
+                                <Button Content="Move relative" Style="{StaticResource HmiButtonStyle}" />
+                            </UniformGrid>
+                        </StackPanel>
+                    </ScrollViewer>
                 </ContentControl>
             </Border>
 
-            <!--  Stautus panel  -->
+            <!--  Status panel  -->
             <Border
                 Grid.Column="2"
                 Margin="0,12,12,12"
                 Style="{StaticResource PanelStyle}">
                 <StackPanel>
                     <TextBlock Style="{StaticResource PanelTitleStyle}" Text="TRẠNG THÁI" />
-                    <Separator Margin="16,0" />
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                    </Grid>
-                    <TextBlock
-                        Grid.Column="0"
-                        VerticalAlignment="Center"
-                        Style="{StaticResource PanelTitleStyle}"
-                        Text="AXIS ENABLE" />
-                    <Ellipse
-                        Grid.Column="1"
-                        Width="20"
-                        Height="20"
-                        VerticalAlignment="Center"
-                        Fill="{StaticResource False}" />
+                    <Separator Margin="16,0,16,12" />
+                    <Border
+                        Margin="16,0,16,16"
+                        BorderBrush="{StaticResource DividerBrush}"
+                        BorderThickness="1"
+                        CornerRadius="6">
+                        <StackPanel>
+                            <!--  TODO cách 2: khi nối dữ liệu, thêm DataTrigger đổi Fill của LED sang LedOnBrush  -->
+                            <Border Style="{StaticResource StatusRowStyle}" ToolTip="Trục đã được cấp nguồn (servo on)">
+                                <DockPanel>
+                                    <Ellipse DockPanel.Dock="Right" Style="{StaticResource LedStyle}" />
+                                    <TextBlock Style="{StaticResource StatusLabelStyle}" Text="AXIS ENABLE" />
+                                </DockPanel>
+                            </Border>
+                            <Border Style="{StaticResource StatusRowStyle}" ToolTip="Cảm biến giới hạn hành trình dương (POT)">
+                                <DockPanel>
+                                    <Ellipse DockPanel.Dock="Right" Style="{StaticResource LedStyle}" />
+                                    <TextBlock Style="{StaticResource StatusLabelStyle}" Text="POT" />
+                                </DockPanel>
+                            </Border>
+                            <Border Style="{StaticResource StatusRowStyle}" ToolTip="Cảm biến giới hạn hành trình âm (NOT)">
+                                <DockPanel>
+                                    <Ellipse DockPanel.Dock="Right" Style="{StaticResource LedStyle}" />
+                                    <TextBlock Style="{StaticResource StatusLabelStyle}" Text="NOT" />
+                                </DockPanel>
+                            </Border>
+                            <Border Style="{StaticResource StatusRowStyle}" ToolTip="Cảm biến gốc (Origin)">
+                                <DockPanel>
+                                    <Ellipse DockPanel.Dock="Right" Style="{StaticResource LedStyle}" />
+                                    <TextBlock Style="{StaticResource StatusLabelStyle}" Text="ORG" />
+                                </DockPanel>
+                            </Border>
+                            <Border
+                                BorderThickness="0"
+                                Style="{StaticResource StatusRowStyle}"
+                                ToolTip="Trục đã về gốc (Home xong)">
+                                <DockPanel>
+                                    <Ellipse DockPanel.Dock="Right" Style="{StaticResource LedStyle}" />
+                                    <TextBlock Style="{StaticResource StatusLabelStyle}" Text="HOMED" />
+                                </DockPanel>
+                            </Border>
+                        </StackPanel>
+                    </Border>
                 </StackPanel>
             </Border>
         </Grid>
@@ -183,7 +341,7 @@
                     Grid.Column="0"
                     Margin="12,0"
                     Style="{StaticResource StatusTextStyle}"
-                    Text="THANH TRẠNG THÁI" />
+                    Text="Sẵn sàng" />
 
                 <StackPanel
                     Grid.Column="1"
